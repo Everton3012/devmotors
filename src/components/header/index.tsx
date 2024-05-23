@@ -6,16 +6,18 @@ import { useState, useEffect } from "react";
 export const Header = () => {
   const [top, setTop] = useState(true);
   const scrollHandler = () => {
-    window.scrollY > 10 ? setTop(false): setTop(true);
+    window.scrollY > 10 ? setTop(false) : setTop(true);
   };
 
   useEffect(() => {
     window.addEventListener("scroll", scrollHandler);
 
-    return () => window.removeEventListener("scroll", scrollHandler)
+    return () => window.removeEventListener("scroll", scrollHandler);
   }, [top]);
   return (
-    <header className={`${styles.header} ${!top ? styles.fixed : styles.background}`}>
+    <header
+      className={`${styles.header} ${!top ? styles.fixed : styles.background}`}
+    >
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={styles.contentLogo}>

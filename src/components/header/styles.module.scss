@@ -50,17 +50,15 @@
         align-items: center;
         padding: 8px 14px;
         transition: all .7s;
-
     }
 
     a:hover {
         font-weight: bold;
         transform: scale(1.09);
     }
-
 }
 
-@media (min-width: 640px) {
+@media (min-width: 550px) {
     .content {
         display: flex;
         align-items: center;
