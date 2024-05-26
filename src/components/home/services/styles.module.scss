@@ -77,11 +77,11 @@
 .servicesTitle {
     font-size: 30px;
     text-align: center;
+    margin-bottom: 40px;
 }
 
 .service {
-    padding: 0 15px;
-
+    
     p {
         padding-top: 5px;
         text-align: center;
@@ -122,5 +122,24 @@
 
     +p {
         font-weight: bold;
+    }
+}
+
+@media (min-width: 640px) {
+    .services{
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .innerService{
+        width: 280px;
+        height: 200px;
+    }
+
+    .servicesTitle{
+        margin-top: 54px;
+        font-size: 30px;
     }
 }

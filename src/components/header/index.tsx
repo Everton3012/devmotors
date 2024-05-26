@@ -25,8 +25,8 @@ export const Header = () => {
           </div>
           <nav className={styles.nav}>
             <Link href={"/"}>Home</Link>
-            <Link href={"#/servicos"}>Serviços</Link>
-            <Link href={"#/contatos"}>Contatos</Link>
+            <Link href={"#servicos"}>Serviços</Link>
+            <Link href={"#contatos"}>Contatos</Link>
           </nav>
         </div>
       </div>
