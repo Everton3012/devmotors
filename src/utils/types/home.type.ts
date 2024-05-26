@@ -18,7 +18,7 @@ export interface HomeProps {
                 }
             },
             services: ServiceProps[];
-            constact: {
+            contact: {
                 email: string;
                 phone: string;
                 address: string;
