@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "DevMotors - Sua oficina especializada",
   description: "Oficina de carros em São Paulo",
   keywords: [
+    "DevMotors",
     "oficina",
     "oficina de carros",
     "carros",
