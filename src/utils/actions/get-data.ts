@@ -1,3 +1,5 @@
+import { redirect } from "next/navigation";
+
 export async function getDataHome() {
     try {
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/objects/66522eb8b6cce150ff097e90?read_key=${process.env.READ_KEY}&depth=1&props=slug,title,metadata`, { next: { revalidate: 120 } });
@@ -21,7 +23,36 @@ export async function getSubMenu() {
         }
 
         return res.json();
-    } catch (err) {
+    } catch (error) {
         throw new Error("Failed to fetch menu data");
+    }
+}
+
+export async function getItemBySlug(itemSlug: string) {
+    const baseUrl = `${process.env.NEXT_PUBLIC_API_URL}/objects`;
+
+    const queryParams = new URLSearchParams({
+        query: JSON.stringify({
+            slug: itemSlug
+        }),
+        props: 'slug,title,content,metadata',
+        read_key: process.env.READ_KEY as string
+    })
+
+    const url = `${baseUrl}?${queryParams.toString()}`;
+
+    try {
+
+        const res = await fetch(url, { next: { revalidate: 130 } })
+
+        if (!res.ok) {
+            throw new Error("Failed get item by slug");
+        }
+
+        return res.json();
+
+    } catch (error) {
+        console.log(error);
+        redirect("/");
     }
 }

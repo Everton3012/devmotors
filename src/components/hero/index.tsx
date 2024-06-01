@@ -7,7 +7,7 @@ interface HomeProps {
   buttonUrl: string;
   buttonTitle: string;
   bannerUrl: string;
-  icon:ReactNode
+  icon: ReactNode;
 }
 
 export const Hero = ({
@@ -28,6 +28,7 @@ export const Hero = ({
       </div>
       <div className={styles.contentBanner}>
         <Image
+          sizes="(max-width: 480px) 100vw, (max-width: 1024px) 75vw, 60vw"
           src={bannerUrl}
           alt={heading}
           priority={true}

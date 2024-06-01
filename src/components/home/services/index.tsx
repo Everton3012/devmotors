@@ -12,6 +12,7 @@ export const Services = ({ object }: HomeProps) => {
         </article>
         <div className={styles.bannerAbout}>
           <Image
+            sizes="(max-width: 480px) 100vw, (max-width: 1024px) 75vw, 60vw"
             className={styles.imageAbout}
             src={object?.metadata?.about?.banner?.url}
             alt={"Imagem ilustrativa sobre a empresa"}
