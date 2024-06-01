@@ -14,7 +14,7 @@ export default async function Home() {
   const menu: MenuProps = await getSubMenu();
   return (
     <main>
-      {menu.objects.length > 0 && <Submenu menu={menu}/>}
+      {menu.objects.length > 0 && <Submenu menu={menu} />}
       <Hero
         heading={object.metadata.heading}
         buttonUrl={object.metadata.cta_button.url}
